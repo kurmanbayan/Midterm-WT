@@ -9,7 +9,13 @@ class ToogleButton extends Component {
     }
   }
 
-  onBtnClick = () => {
+  onBtnClick = (cost) => {
+    if (!this.state.btn) {
+      this.props.addToCost(cost)
+    }
+    else {
+      this.props.subFromCost(cost)
+    }
     this.setState({
       btn: !this.state.btn
     })
@@ -18,12 +24,12 @@ class ToogleButton extends Component {
   render() {
     if (this.state.btn) {
       return (
-        <button style={{"backgroundColor": "blue", "color": "white", "margin": "10%", "height": "100px", "width": "100px"}} onClick={this.onBtnClick}> {this.props.name} </button>
+        <button style={{"backgroundColor": "blue", "color": "white", "height": "40px", "width": "150px"}} onClick={() => this.onBtnClick(this.props.data.cost)}> {this.props.data.name} {this.props.data.cost} $ </button>
       )
     }
     else {
       return (
-        <button style={{"backgroundColor": "white", "fontColor": "black", "margin": "10%", "height": "100px", "width": "100px"}} onClick={this.onBtnClick}> {this.props.name}  </button>
+        <button style={{"backgroundColor": "white", "fontColor": "black", "height": "40px", "width": "150px"}} onClick={() => this.onBtnClick(this.props.data.cost)}> {this.props.data.name} {this.props.data.cost} $  </button>
       )
     }
   }

@@ -5,18 +5,42 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      list: ["Home", "About", "Contact"]
+      list: [
+        {name: "ABs", cost: 1000},
+        {name: "Abd", cost: 2000},
+        {name: "Aqwe", cost: 3000},
+        {name: "Aqweqw", cost: 4000},
+      ],
+      tot_cost: 0,
     }
+  }
+
+  addToCost = (cost) => {
+    let cur = this.state.tot_cost
+    this.setState ({
+      tot_cost: cur + cost
+    })
+  }
+
+  subFromCost = (cost) => {
+    let cur = this.state.tot_cost
+    this.setState ({
+      tot_cost: cur - cost
+    })
   }
 
   render() {
     return (
       <div>
-        {
-          this.state.list.map((data, index) => {
-            return <ToogleButton name={data} key={index}/>
-          })
-        }
+        <ul>
+          {
+            this.state.list.map((data, index) => {
+              return <li> <ToogleButton addToCost={this.addToCost} subFromCost={this.subFromCost} data={data} key={index}/>
+              </li>
+            })
+          }
+        </ul>
+        <div> Total cost = {this.state.tot_cost} </div>
       </div>
     )
   }
