@@ -10,12 +10,7 @@ class ToogleButton extends Component {
   }
 
   onBtnClick = (cost) => {
-    if (!this.state.btn) {
-      this.props.addToCost(cost)
-    }
-    else {
-      this.props.subFromCost(cost)
-    }
+    !this.state.btn ? this.props.addToCost(cost) : this.props.addToCost((-1) * cost)
     this.setState({
       btn: !this.state.btn
     })

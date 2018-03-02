@@ -22,20 +22,13 @@ class App extends Component {
     })
   }
 
-  subFromCost = (cost) => {
-    let cur = this.state.tot_cost
-    this.setState ({
-      tot_cost: cur - cost
-    })
-  }
-
   render() {
     return (
       <div>
         <ul>
           {
             this.state.list.map((data, index) => {
-              return <li> <ToogleButton addToCost={this.addToCost} subFromCost={this.subFromCost} data={data} key={index}/>
+              return <li> <ToogleButton addToCost={this.addToCost} data={data} key={index}/>
               </li>
             })
           }
