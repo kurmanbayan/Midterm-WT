@@ -4,20 +4,27 @@ body {
   font-family: Lato;
 }
 
-.input1 {
-  width: 50%;
-  padding-left: 5px;
+ul {
+  list-style-type: none;
 }
 
-p {
-  padding-left: 20%;
-}
-
-.dropDown {
+li {
   margin: 10px;
-  margin-left: 40.5%;
+  width: 50%;
 }
 
-.input1::placeholder {
-  font-size: 14px;
+.addBtn {
+  background-color: white;
+  color: black;
+  height: 40px;
+  width: 50%;
+  text-align: left;
+}
+
+.remBtn {
+  background-color: blue;
+  color: white;
+  height: 40px;
+  width: 50%;
+  text-align: left;
 }

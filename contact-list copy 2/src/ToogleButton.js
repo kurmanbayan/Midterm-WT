@@ -19,12 +19,12 @@ class ToogleButton extends Component {
   render() {
     if (this.state.btn) {
       return (
-        <button style={{"backgroundColor": "blue", "color": "white", "height": "40px", "width": "150px"}} onClick={() => this.onBtnClick(this.props.data.cost)}> {this.props.data.name} {this.props.data.cost} $ </button>
+        <button className="remBtn" onClick={() => this.onBtnClick(this.props.data.cost)}> {this.props.data.name} {this.props.data.cost} $ </button>
       )
     }
     else {
       return (
-        <button style={{"backgroundColor": "white", "fontColor": "black", "height": "40px", "width": "150px"}} onClick={() => this.onBtnClick(this.props.data.cost)}> {this.props.data.name} {this.props.data.cost} $  </button>
+        <button className="addBtn" onClick={() => this.onBtnClick(this.props.data.cost)}> {this.props.data.name} {this.props.data.cost} $  </button>
       )
     }
   }

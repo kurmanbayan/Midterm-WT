@@ -6,10 +6,10 @@ class App extends Component {
     super()
     this.state = {
       list: [
-        {name: "ABs", cost: 1000},
-        {name: "Abd", cost: 2000},
-        {name: "Aqwe", cost: 3000},
-        {name: "Aqweqw", cost: 4000},
+        {name: "Milk", cost: 1000},
+        {name: "Bread", cost: 2000},
+        {name: "Tomato", cost: 3000},
+        {name: "Apple", cost: 4000},
       ],
       tot_cost: 0,
     }
@@ -24,16 +24,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div align="center">
+        <h1> Products </h1>
         <ul>
           {
             this.state.list.map((data, index) => {
-              return <li> <ToogleButton addToCost={this.addToCost} data={data} key={index}/>
+              return <li>
+                <ToogleButton addToCost={this.addToCost} data={data} key={index}/>
               </li>
             })
           }
         </ul>
-        <div> Total cost = {this.state.tot_cost} </div>
+        <div> Total cost = {this.state.tot_cost} $ </div>
       </div>
     )
   }
