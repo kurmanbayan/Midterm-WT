@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div align="center">
         {
           this.state.list.map((data, index) => {
             return <ToogleButton name={data} key={index}/>
