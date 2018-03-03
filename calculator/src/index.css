@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.calcButton {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.mainInput {
+  text-align: right;
+  margin: 20px;
+  width: 50%;
+  padding: 20px;
+  font-size: 50px;
+}
